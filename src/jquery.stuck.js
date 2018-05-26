@@ -203,7 +203,7 @@
                 "z-index": ''
               });
             }
-            if (el.contained && window_top < (el.container.offset().top + el.container.height() - el.node.height() - el.top_offset)) {
+            if (el.contained && window_top <= (el.container.offset().top + el.container.height() - el.node.height() - el.top_offset)) {
               el.contained = false;
               el.container.css("position", '');
               el.node.css({
@@ -214,7 +214,7 @@
                 "z-index": 99
               });
             }
-            if (!el.fixed && window_top > el.top - el.top_offset) {
+            if (!el.fixed && window_top >= el.top - el.top_offset) {
               el.fixed = true;
               el.spacer.show();
               el.node.css({
